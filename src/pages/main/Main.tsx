@@ -1,9 +1,14 @@
 import React from "react";
+import { Menu } from "../../components/menu/Menu";
+import { Navbar } from "../../components/navbar/Navbar";
+import { Posts } from "../../components/posts/Posts";
 
 import "./main.scss";
 export const Main: React.FC = () => {
   return (
     <>
+      <Menu></Menu>
+      <Navbar></Navbar>
       <div className="main">
         <div className="main__headerContainer">
           <div className="main__header">Vasya Pupkin</div>
@@ -27,6 +32,7 @@ export const Main: React.FC = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };
