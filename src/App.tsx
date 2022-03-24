@@ -3,14 +3,17 @@ import "./App.css";
 import { Main } from "./pages/main/Main";
 import { Post } from "./pages/post/Post";
 import { Create } from "./pages/create/Create"
+import {Profile} from "./pages/profile/Profile"
 import { Authorization } from "./components/modal/authorization/Authorization"
 import { Registration } from "./components/modal/registration/Registration"
+
 
 
 function App() {
   return (
     <>
-      <Create></Create>
+      <Profile></Profile>
+      {/* <Create></Create> */}
       {/* <Post></Post> */}
       {/* <Main></Main> */}
       {/* <Authorization></Authorization> */}
