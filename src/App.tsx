@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
 import { Main } from "./pages/main/Main";
-import { Authorization } from "./components/modal/authorization/Authorization";
+import { Post } from "./pages/post/Post";
+import { Authorization } from "./components/modal/authorization/Authorization"
 import { Registration } from "./components/modal/registration/Registration"
 
 function App() {
   return (
     <>
-      <Main></Main>
+      <Post></Post>
+      {/* <Main></Main> */}
       {/* <Authorization></Authorization> */}
       {/* <Registration></Registration> */}
     </>

@@ -65,14 +65,7 @@
     }
     .modal__button {
       @include mixin.button;
-
       font-family: font.$textFont;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 19px;
-      text-align: center;
-      color: #68572d;
     }
   }
 }
