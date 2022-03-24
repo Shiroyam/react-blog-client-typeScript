@@ -1,0 +1,19 @@
+@mixin input {
+  outline: none;
+  width: 366px;
+  height: 48px;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@mixin button {
+  width: 366px;
+  height: 49px;
+  left: 537px;
+  top: 610px;
+  background: #ffdf36;
+  border-radius: 12px;
+  cursor: pointer;
+}
