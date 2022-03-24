@@ -1,0 +1,39 @@
+@use "./../../assets/scss/fonts.scss" as font;
+.comments {
+  margin-top: 10px;
+  width: 584px;
+  height: 99px;
+  border-bottom: 1px solid #f1f1f1;
+  .comments__header {
+    display: flex;
+    justify-content: space-between;
+    .comments__fullName {
+      font-family: font.$textFont;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: #373737;
+    }
+    .comments__date {
+      font-family: font.$dateFont;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      font-feature-settings: "tnum" on, "lnum" on;
+      color: #c1c1c1;
+    }
+  }
+  .comments__text {
+    padding-top: 9px;
+    font-family: font.$textFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #373737;
+  }
+}

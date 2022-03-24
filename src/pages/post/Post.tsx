@@ -3,6 +3,7 @@ import "./post.scss";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Menu } from "../../components/menu/Menu";
 import { Navbar } from "../../components/navbar/Navbar";
+import { Comments } from "../../components/comments/Comments";
 
 export const Post: React.FC = () => {
   return (
@@ -42,7 +43,7 @@ export const Post: React.FC = () => {
         </div>
         <div className="post__commentsContainer">
           <div className="post__commentsHeader">Комментарии (3)</div>
-          {/* comment */}
+          <Comments></Comments>
           <div className="post__commentsInputContainer">
               <div className="post__commentsInputHeader">
               Добавить комментарий
