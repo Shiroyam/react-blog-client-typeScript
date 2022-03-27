@@ -1,5 +1,8 @@
 @use "./../../assets/scss/fonts.scss" as font;
 .posts {
+  &:hover {
+    background: rgba(138, 164, 183, 0.04);
+  }
   width: 620px;
   height: 195px;
   padding-left: 20px;

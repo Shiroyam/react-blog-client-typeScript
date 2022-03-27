@@ -6,11 +6,9 @@ import CreateIcon from "@mui/icons-material/Create";
 import { Posts } from "../posts/Posts";
 import { useDispatch } from "react-redux";
 import { openAuthorization } from "../../redux/authorization/action";
-import { useTypesSelector } from "../../hooks/useTypeSelector";
+import { Link } from "react-router-dom";
 
 export const Navbar: React.FC = () => {
-  const { flagAuth } = useTypesSelector((state) => state.auth);
-  console.log(flagAuth);
   const dispatch = useDispatch();
   return (
     <>
@@ -23,7 +21,7 @@ export const Navbar: React.FC = () => {
               onClick={() => dispatch(openAuthorization())}
               className="nav__iconPerson"
             />
-            <CreateIcon className="nav__iconCreate" />
+            <Link to="/create"><CreateIcon className="nav__iconCreate" /></Link>
           </div>
         </div>
         <div>
