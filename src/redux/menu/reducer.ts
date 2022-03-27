@@ -1,5 +1,5 @@
 interface MenuState {
-  flag:boolean;
+  flagMenu:boolean;
 }
 
 interface MenuAction {
@@ -8,7 +8,7 @@ interface MenuAction {
 }
 
 const initialState: MenuState = {
-  flag: false,
+  flagMenu: false,
 };
 
 export const menuReducer = (
@@ -17,9 +17,9 @@ export const menuReducer = (
 ): MenuState => {
   switch (action.type) {
     case "CLOSE_MENU":
-      return { ...state, flag: false };
+      return { ...state, flagMenu: false };
     case "OPEN_MENU":
-      return { ...state, flag: true };
+      return { ...state, flagMenu: true };
     default:
       return state;
   }

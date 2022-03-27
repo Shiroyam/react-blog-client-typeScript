@@ -7,10 +7,12 @@ import { Create } from "./pages/create/Create"
 import {Profile} from "./pages/profile/Profile"
 import { Authorization } from "./components/modal/authorization/Authorization"
 import { Registration } from "./components/modal/registration/Registration"
+import { useTypesSelector } from "./hooks/useTypeSelector";
 
 
 
 function App() {
+  const {flagAuth} = useTypesSelector((state) => state.auth)
   return (
     <>
       {/* <Profile></Profile> */}
@@ -18,7 +20,7 @@ function App() {
       {/* <Post></Post> */}
       <Main></Main>
       {/* <MenuActive></MenuActive> */}
-      {/* <Authorization></Authorization> */}
+      {flagAuth && <Authorization></Authorization>}
       {/* <Registration></Registration> */}
     </>
   );

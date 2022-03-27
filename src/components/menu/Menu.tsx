@@ -7,7 +7,7 @@ import { openMenu } from "../../redux/menu/action";
 import "./menu.scss";
 
 export const Menu: React.FC = () => {
-  const { flag } = useTypesSelector((state) => state.menu);
+  const { flagMenu } = useTypesSelector((state) => state.menu);
   const dispatch = useDispatch();
   return (
     <>
@@ -22,7 +22,7 @@ export const Menu: React.FC = () => {
           </div>
         </div>
       </div>
-      {flag && <MenuActive />}
+      {flagMenu && <MenuActive />}
     </>
   );
 };
