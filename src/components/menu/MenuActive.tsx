@@ -3,6 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./menuActive.scss";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../../redux/menu/action";
+import { NavLink } from "react-router-dom";
 
 export const MenuActive: React.FC = () => {
   const dispatch = useDispatch();
@@ -11,13 +12,11 @@ export const MenuActive: React.FC = () => {
       <div className="menuActive">
         <div className="menuActive__content">
           <div className="menuActive__routes">
-            <div className="menuActive__headerName">Вася Пупкин</div>
-            <ul>
-              <li className="menuActive__route active">Главная</li>
-              <li className="menuActive__route">Мой профиль</li>
-              <li className="menuActive__route">Создать запись</li>
-              <li className="menuActive__route">Выйти</li>
-            </ul>
+            <div className="menuActive__headerName">Вася Пупкин</div>         
+              <NavLink to="/" className="menuActive__route">Главная</NavLink>
+              <NavLink to="/profile" className="menuActive__route">Мой профиль</NavLink>
+              <NavLink to="/create" className="menuActive__route">Создать запись</NavLink>
+              <li className="menuActive__route">Выйти</li>         
           </div>
           <div className="menuActive__closeContainer">
             <CloseIcon
