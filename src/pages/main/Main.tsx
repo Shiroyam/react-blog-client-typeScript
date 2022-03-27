@@ -9,11 +9,12 @@ import { getPosts } from "../../redux/posts/action";
 import "./main.scss";
 export const Main: React.FC = () => {
   const dispatch = useDispatch()
-  const posts= useTypesSelector((state)=> state.posts)
+  const {posts} = useTypesSelector((state)=> state.posts)
   React.useEffect(()=>{
     dispatch(getPosts())
   },[])
   console.log(posts)
+
   return (
     <>
       <Menu></Menu>
