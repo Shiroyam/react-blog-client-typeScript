@@ -1,8 +1,11 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./menuActive.scss";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../../redux/menu/action";
 
 export const MenuActive: React.FC = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="menuActive">
@@ -17,7 +20,10 @@ export const MenuActive: React.FC = () => {
             </ul>
           </div>
           <div className="menuActive__closeContainer">
-            <CloseIcon className="menuActive__icon" />
+            <CloseIcon
+              onClick={() => dispatch(closeMenu())}
+              className="menuActive__icon"
+            />
             <div className="menuActive__header">МЕНЮ</div>
           </div>
         </div>
