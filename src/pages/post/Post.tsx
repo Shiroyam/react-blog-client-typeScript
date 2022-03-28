@@ -6,6 +6,7 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { Comments } from "../../components/comments/Comments";
 import { useParams } from "react-router-dom";
 import { getPost } from "../../redux/post/action";
+import { getCommentsPost } from "../../redux/comments/action";
 import { useDispatch } from "react-redux";
 import { useTypesSelector } from "../../hooks/useTypeSelector";
 
@@ -16,6 +17,7 @@ export const Post: React.FC = () => {
   const {id} = useParams()
   React.useEffect(()=>{
     dispatch(getPost(id))
+    dispatch(getCommentsPost(id))
   }, [id])
   const { post } = useTypesSelector((state) => state.post)
   

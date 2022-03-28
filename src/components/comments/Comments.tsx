@@ -1,19 +1,23 @@
 import React from "react";
 import "./comments.scss";
+import { useTypesSelector } from "../../hooks/useTypeSelector";
 
 export const Comments: React.FC = () => {
+  const { comment } = useTypesSelector((state) => state.comments)
+  console.log(comment)
   return (
     <>
+    {comment.map(comments => (
       <div className="comments">
         <div className="comments__header">
-          <div className="comments__fullName">Vasya Pupkin</div>
-          <div className="comments__date">12 августа 2019 в 08:06</div>
+          <div className="comments__fullName">{comments.user.fullName}</div>
+          <div className="comments__date">{comments.user.createdAt}</div>
         </div>
         <div className="comments__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
-          adipiscing leo id sed neque, diam nibh.
+          {comments.text}
         </div>
       </div>
+    ))}
     </>
   );
 };

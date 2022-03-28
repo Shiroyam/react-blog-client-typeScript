@@ -3,6 +3,7 @@ import { menuReducer } from "./menu/reducer";
 import { authorizationReducer } from "./authorization/reducer"
 import { postsReducer } from "./posts/reducer"
 import { postReducer } from "./post/reducer"
+import { commentsReducer } from "./comments/reducer"
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   auth: authorizationReducer,
   posts: postsReducer,
   post: postReducer,
+  comments: commentsReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

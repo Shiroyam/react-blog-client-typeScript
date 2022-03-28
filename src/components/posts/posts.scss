@@ -1,4 +1,8 @@
 @use "./../../assets/scss/fonts.scss" as font;
+.active {
+  background: rgba(138, 164, 183, 0.04);
+  border-left: 4px solid #13315e;
+}
 .posts {
   &:hover {
     background: rgba(138, 164, 183, 0.04);

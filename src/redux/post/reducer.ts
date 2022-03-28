@@ -4,17 +4,20 @@ interface PostAction {
 }
 
 interface PostState {
-    post: any;
+  post: any;
 }
 
 const initeState: PostState = {
-    post: {},
+  post: {},
 };
 
-export const postReducer = (state = initeState, action: PostAction): PostState => {
+export const postReducer = (
+  state = initeState,
+  action: PostAction
+): PostState => {
   switch (action.type) {
     case "GET_POST":
-      return { post: action.payload}
+      return { post: action.payload };
     default:
       return state;
   }

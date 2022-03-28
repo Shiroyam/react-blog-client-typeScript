@@ -1,21 +1,24 @@
 interface PostsAction {
-    type: string;
-    payload: any[];
+  type: string;
+  payload: any[];
 }
 
 interface PostsState {
-    posts: any[];
+  posts: any[];
 }
 
 const initState: PostsState = {
-    posts: [],
-}
+  posts: [],
+};
 
-export const postsReducer = (state = initState, action:PostsAction): PostsState => {    
-    switch (action.type) {
-        case"GET_POSTS":
-            return {posts: action.payload}
-        default:
-            return state;
-    }
-}
+export const postsReducer = (
+  state = initState,
+  action: PostsAction
+): PostsState => {
+  switch (action.type) {
+    case "GET_POSTS":
+      return { posts: action.payload };
+    default:
+      return state;
+  }
+};
