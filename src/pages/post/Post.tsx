@@ -4,41 +4,46 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Menu } from "../../components/menu/Menu";
 import { Navbar } from "../../components/navbar/Navbar";
 import { Comments } from "../../components/comments/Comments";
+import { useParams } from "react-router-dom";
+import { getPost } from "../../redux/post/action";
+import { useDispatch } from "react-redux";
+import { useTypesSelector } from "../../hooks/useTypeSelector";
+
+
 
 export const Post: React.FC = () => {
+  const dispatch = useDispatch()
+  const {id} = useParams()
+  React.useEffect(()=>{
+    dispatch(getPost(id))
+  }, [id])
+  const { post } = useTypesSelector((state) => state.post)
+  
   return (
     <>
       <Menu></Menu>
       <Navbar></Navbar>
       <div className="post">
-        <div className="post__headerContainer">
+        <div  style={{ backgroundImage: `url(${post.photoUrl})` }} className="post__headerContainer">
           <div className="post__dateContainer">
-            <div className="post__date">12 августа 2019 в 08:06</div>
+            <div className="post__date">{post.createdAt}</div>
             <div className="post__iconContainer">
               <VisibilityIcon className="post__icon" />
-              <div className="post__number">55</div>
+              <div className="post__number">{post.views}</div>
             </div>
           </div>
           <div className="post__headerText">
             <div className="post__header">
-              Какой-то очень интересный заголовок
+              {post.title}
             </div>
             <div className="post__description">
-              Я часто замечаю, что начинающие фронтенд-разработчики по несколько
-              раз то начинают, то забрасывают изучение технологий.
+             {post.description}
             </div>
           </div>
         </div>
         <div className="post__textContainer">
           <div className="post__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
-            fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis
-            scelerisque leo curabitur faucibus. Nec, sed porta ac enim. Mattis
-            quam accumsan ipsum commodo sed purus mi. Platea sit lectus neque,
-            nulla sapien vitae nulla. Nisl viverra viverra quis mattis tincidunt
-            laoreet amet, laoreet proin. Duis mi, aliquam tincidunt amet
-            phasellus malesuada non nisi.
+            {post.text}
           </div>
         </div>
         <div className="post__commentsContainer">

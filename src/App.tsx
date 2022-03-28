@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/post" element={<Post />} />
+        <Route path="/post/:id" element={<Post />} />
       </Routes>
       {flagAuth && <Authorization />}
     </>
