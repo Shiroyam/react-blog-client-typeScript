@@ -2,7 +2,7 @@
 .comments {
   margin-top: 10px;
   width: 584px;
-  height: 99px;
+  height: 100px;
   border-bottom: 1px solid #f1f1f1;
   .comments__header {
     display: flex;
@@ -28,6 +28,7 @@
     }
   }
   .comments__text {
+    max-width: 584px;
     padding-top: 9px;
     font-family: font.$textFont;
     font-style: normal;

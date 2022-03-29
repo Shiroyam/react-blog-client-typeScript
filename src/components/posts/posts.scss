@@ -1,12 +1,14 @@
 @use "./../../assets/scss/fonts.scss" as font;
 .active {
   background: rgba(138, 164, 183, 0.04);
-  border-left: 4px solid #13315e;
+  border-left: 4px solid #13315e !important;
 }
 .posts {
   &:hover {
     background: rgba(138, 164, 183, 0.04);
   }
+  border-bottom: 1px solid #f9f9f9;
+  border-left: 1px solid #f9f9f9;
   width: 620px;
   height: 195px;
   padding-left: 20px;

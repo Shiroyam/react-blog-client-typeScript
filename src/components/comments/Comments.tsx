@@ -7,17 +7,17 @@ export const Comments: React.FC = () => {
   console.log(comment)
   return (
     <>
-    {comment.map(comments => (
-      <div className="comments">
-        <div className="comments__header">
-          <div className="comments__fullName">{comments.user.fullName}</div>
-          <div className="comments__date">{comments.user.createdAt}</div>
+      {comment.map(comments => (
+        <div key={comments._id} className="comments">
+          <div className="comments__header">
+            <div className="comments__fullName">{comments.user.fullName}</div>
+            <div className="comments__date">{comments.user.createdAt}</div>
+          </div>
+          <div className="comments__text">
+            {comments.text}
+          </div>
         </div>
-        <div className="comments__text">
-          {comments.text}
-        </div>
-      </div>
-    ))}
+      ))}
     </>
   );
 };

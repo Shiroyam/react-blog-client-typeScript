@@ -9,24 +9,39 @@ import { getPost } from "../../redux/post/action";
 import { getCommentsPost } from "../../redux/comments/action";
 import { useDispatch } from "react-redux";
 import { useTypesSelector } from "../../hooks/useTypeSelector";
-
-
+import { postComments } from "../../redux/comments/action";
+import { useForm } from "react-hook-form";
 
 export const Post: React.FC = () => {
   const dispatch = useDispatch()
-  const {id} = useParams()
-  React.useEffect(()=>{
+  const { id } = useParams()
+  const { post } = useTypesSelector((state) => state.post)
+  const { comment } = useTypesSelector((state) => state.comments)
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const onClickSubmit = (data: any) => {
+    dispatch(postComments(data, id))
+    window.location.reload()
+  }
+
+  React.useEffect(() => {
     dispatch(getPost(id))
     dispatch(getCommentsPost(id))
   }, [id])
-  const { post } = useTypesSelector((state) => state.post)
-  
+
   return (
     <>
       <Menu></Menu>
       <Navbar></Navbar>
       <div className="post">
-        <div  style={{ backgroundImage: `url(${post.photoUrl})` }} className="post__headerContainer">
+        <div style={{ backgroundImage: `url(${post.photoUrl})` }} className="post__headerContainer">
           <div className="post__dateContainer">
             <div className="post__date">{post.createdAt}</div>
             <div className="post__iconContainer">
@@ -39,7 +54,7 @@ export const Post: React.FC = () => {
               {post.title}
             </div>
             <div className="post__description">
-             {post.description}
+              {post.description}
             </div>
           </div>
         </div>
@@ -49,14 +64,24 @@ export const Post: React.FC = () => {
           </div>
         </div>
         <div className="post__commentsContainer">
-          <div className="post__commentsHeader">Комментарии (3)</div>
+          <div className="post__commentsHeader">Комментарии ({comment.length})</div>
           <Comments></Comments>
           <div className="post__commentsInputContainer">
-              <div className="post__commentsInputHeader">
+            <div className="post__commentsInputHeader">
               Добавить комментарий
+            </div>
+            <form onSubmit={handleSubmit(onClickSubmit)}>
+              <textarea {...register("comment", {
+                maxLength: {
+                  value: 200,
+                  message: "Можно ввести максимум 50 символа!",
+                },
+              })} className="post__commentsInput"></textarea>
+              <div className="modal__context">
+                {errors?.comment && <p>{errors?.comment?.message || "Error!"}</p>}
               </div>
-              <textarea className="post__commentsInput"></textarea>
-              <button className="post__commentsButton">Отправить</button>
+              <button type="submit" className="post__commentsButton">Отправить</button>
+            </form>
           </div>
         </div>
       </div>
