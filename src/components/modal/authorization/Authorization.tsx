@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch } from "react-redux";
 import { closeAuthorization } from "../../../redux/authorization/action";
 import { useForm } from "react-hook-form";
+import { postAuthorization } from "../../../redux/authorization/action";
 
 export const Authorization: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,8 @@ export const Authorization: React.FC = () => {
     mode: "onBlur",
   });
 
-  const postAuth = (data: {}) => {
-    console.log(data)
+  const postAuth = (data: any) => {
+    dispatch(postAuthorization(data))
   }
 
   return (

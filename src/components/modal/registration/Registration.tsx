@@ -2,8 +2,14 @@ import React from "react";
 import "./registration.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeReg } from "../../../redux/registration/action";
+import { postReg } from "../../../redux/registration/action";
+import { useTypesSelector } from "../../../hooks/useTypeSelector";
 
 export const Registration: React.FC = () => {
+  const dispatch = useDispatch()
+  const { flagReg } = useTypesSelector((state) => state.reg)
 
   const {
     register,
@@ -13,19 +19,19 @@ export const Registration: React.FC = () => {
     mode: "onBlur",
   });
 
-  const postReg = (data: {}) => {
-    console.log(data)
+  const postRegHandel = (data: any) => {
+    dispatch(postReg(data))
   }
 
   return (
     <>
-      <div className="modalReg">
+      {flagReg && (<div className="modalReg">
         <div className="modalReg__content">
           <div className="modalReg__headerContainer">
             <div className="modalReg__header">Вход в аккаунт</div>
-            <CloseIcon className="modalReg__close" />
+            <CloseIcon onClick={() => dispatch(closeReg())} className="modalReg__close" />
           </div>
-          <form onSubmit={handleSubmit(postReg)}>
+          <form onSubmit={handleSubmit(postRegHandel)}>
             <div className="modalReg__fullName">
               <div className="modalReg__headerFullName">Имя и Фамилия</div>
               <input {...register("fullName", {
@@ -71,9 +77,9 @@ export const Registration: React.FC = () => {
             </div>
             <button type="submit" className="modalReg__button">Зарегистрироваться</button>
           </form>
-
         </div>
-      </div>
+      </div>)}
+
     </>
   );
 };

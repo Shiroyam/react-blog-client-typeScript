@@ -11,15 +11,16 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const { flagAuth } = useTypesSelector((state) => state.auth);
+  const { flagReg } = useTypesSelector((state) => state.reg)
   return (
     <>
-      {/* <Registration /> */}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create" element={<Create />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>
+      {flagReg && <Registration />}
       {flagAuth && <Authorization />}
     </>
   );
