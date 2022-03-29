@@ -12,7 +12,7 @@
   align-items: center;
   .modal__content {
     width: 446px;
-    height: 385px;
+    height: 400px;
     background: #ffffff;
     border-radius: 12px;
     padding: 40px;
@@ -35,6 +35,16 @@
     .modal__inputEmail {
       margin-top: 39px;
       margin-bottom: 20px;
+      .modal__context{
+        font-family: font.$textFont;
+        padding-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
       .modal__headerEmail {
         padding-bottom: 8px;
         font-family: font.$textFont;
@@ -50,6 +60,16 @@
     }
     .modal__inputPassword {
       margin-bottom: 20px;
+      .modal__context{
+        font-family: font.$textFont;
+        padding-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
       .modal__headerPassword {
         padding-bottom: 8px;
         font-family: font.$textFont;

@@ -1,6 +1,6 @@
 @use "./../../../assets/scss/fonts.scss" as font;
 @use "./../../../assets/scss/_mixin.scss" as mixin;
-.modal {
+.modalReg {
   height: 100vh;
   width: 100vw;
   top: 0;
@@ -10,16 +10,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .modal__content {
+  .modalReg__content {
     width: 446px;
-    height: 475px;
+    height: 550px;
     background: #ffffff;
     border-radius: 12px;
     padding: 40px;
-    .modal__headerContainer {
+    .modalReg__headerContainer {
       display: flex;
       justify-content: space-between;
-      .modal__header {
+      .modalReg__header {
         font-family: font.$textFont;
         font-style: normal;
         font-weight: 700;
@@ -28,44 +28,24 @@
         letter-spacing: -0.5px;
         color: #373737;
       }
-      .modal__close {
+      .modalReg__close {
         cursor: pointer;
       }
     }
-    .modal__fullName {
-      margin-bottom: 20px;
+    .modalReg__fullName {
       margin-top: 36px;
-      .modal__headerFullName {
-        padding-bottom: 8px;
-        font-family: font.$textFont;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 100%;
-        color: #373737;
-      }
-      .modal__input {
-        @include mixin.input;
-      }
-    }
-    .modal__inputEmail {
-      margin-bottom: 20px;
-      .modal__headerEmail {
-        padding-bottom: 8px;
-        font-family: font.$textFont;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 100%;
-        color: #373737;
-      }
-      .modal__input {
-        @include mixin.input;
-      }
-    }
-    .modal__inputPassword {
       margin-bottom: 30px;
-      .modal__headerPassword {
+      .modalReg__context{
+        font-family: font.$textFont;
+        padding-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
+      .modalReg__headerFullName {
         padding-bottom: 8px;
         font-family: font.$textFont;
         font-style: normal;
@@ -74,11 +54,61 @@
         line-height: 100%;
         color: #373737;
       }
-      .modal__input {
+      .modalReg__input {
         @include mixin.input;
       }
     }
-    .modal__button {
+    .modalReg__inputEmail {
+      margin-bottom: 30px;
+      .modalReg__context{
+        font-family: font.$textFont;
+        padding-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
+      .modalReg__headerEmail {
+        padding-bottom: 8px;
+        font-family: font.$textFont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: #373737;
+      }
+      .modalReg__input {
+        @include mixin.input;
+      }
+    }
+    .modalReg__inputPassword {
+      margin-bottom: 30px;
+      .modalReg__context{
+        font-family: font.$textFont;
+        padding-top: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
+      .modalReg__headerPassword {
+        padding-bottom: 8px;
+        font-family: font.$textFont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: #373737;
+      }
+      .modalReg__input {
+        @include mixin.input;
+      }
+    }
+    .modalReg__button {
       @include mixin.button;
 
       font-family: font.$textFont;
