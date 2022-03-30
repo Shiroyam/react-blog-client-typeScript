@@ -1,6 +1,3 @@
-import axios from "axios"
-import { Dispatch } from "react"
-
 export const closeSearch = () => {
     return ({
         type: "CLOSE_SEARCH"

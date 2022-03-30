@@ -4,11 +4,11 @@ interface PostsAction {
 }
 
 interface PostsState {
-  posts: any[];
+  posts: any;
 }
 
 const initState: PostsState = {
-  posts: [],
+  posts: {},
 };
 
 export const postsReducer = (

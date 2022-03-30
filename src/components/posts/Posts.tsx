@@ -13,14 +13,15 @@ export const Posts: React.FC = () => {
   const { id } = useParams();
   const { posts } = useTypesSelector((state) => state.posts);
   const { text } = useTypesSelector((state) => state.search)
+  const postItems: any[] = posts.items
 
   React.useEffect(() => {
-    dispatch(getPosts(text));
+    dispatch(getPosts(text, 1));
   }, [text]);
 
   return (
     <>
-      {posts.map((post) => (
+      {(postItems ?? []).map((post) => (
         <NavLink
           key={post._id}
           to={`/post/${post._id}`}

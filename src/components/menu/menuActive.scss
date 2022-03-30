@@ -6,6 +6,7 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
+  z-index: 3;
   .menuActive__content {
     width: 400px;
     height: 100vh;

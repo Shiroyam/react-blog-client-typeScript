@@ -4,7 +4,6 @@ import { useTypesSelector } from "../../hooks/useTypeSelector";
 
 export const Comments: React.FC = () => {
   const { comment } = useTypesSelector((state) => state.comments)
-  console.log(comment)
   return (
     <>
       {comment.map(comments => (
