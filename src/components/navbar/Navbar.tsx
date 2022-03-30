@@ -7,6 +7,7 @@ import { Posts } from "../posts/Posts";
 import { useDispatch } from "react-redux";
 import { openAuthorization } from "../../redux/authorization/action";
 import { Link } from "react-router-dom";
+import { Pogination } from "../pogination/Pogination";
 
 export const Navbar: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ export const Navbar: React.FC = () => {
         </div>
         <div>
           <Posts></Posts>
+          <Pogination></Pogination>
         </div>
       </nav>
     </>

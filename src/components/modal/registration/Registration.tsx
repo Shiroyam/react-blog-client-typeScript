@@ -79,7 +79,6 @@ export const Registration: React.FC = () => {
           </form>
         </div>
       </div>)}
-
     </>
   );
 };
