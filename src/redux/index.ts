@@ -6,6 +6,7 @@ import { postReducer } from "./post/reducer"
 import { commentsReducer } from "./comments/reducer"
 import { regReducer } from "./registration/reducer";
 import { createReducer } from "./create/reducer";
+import { searchReducer } from "./search/reducer"
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   post: postReducer,
   comments: commentsReducer,
   create: createReducer,
+  search: searchReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

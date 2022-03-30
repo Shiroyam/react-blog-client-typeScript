@@ -6,14 +6,17 @@ import { getPosts } from "../../redux/posts/action";
 import { useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { ClassNames } from "@emotion/react";
+import { textChangeRangeIsUnchanged } from "typescript";
 
 export const Posts: React.FC = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { posts } = useTypesSelector((state) => state.posts);
+  const { text } = useTypesSelector((state) => state.search)
+
   React.useEffect(() => {
-    dispatch(getPosts());
-  }, []);
+    dispatch(getPosts(text));
+  }, [text]);
 
   return (
     <>

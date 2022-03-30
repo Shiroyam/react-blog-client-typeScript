@@ -8,16 +8,22 @@ import { useDispatch } from "react-redux";
 import { openAuthorization } from "../../redux/authorization/action";
 import { Link } from "react-router-dom";
 import { Pogination } from "../pogination/Pogination";
+import { Search } from "../search/Search";
+import { openSearch } from "../../redux/search/action";
 
 export const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   return (
     <>
       <nav className="nav">
+        <Search></Search>
         <div className="nav__content">
           <div className="nav__header">VASYA BLOG</div>
           <div className="nav__icon">
-            <SearchIcon className="nav__iconSearch" />
+            <SearchIcon
+              onClick={() => dispatch(openSearch())}
+              className="nav__iconSearch"
+            />
             <PersonIcon
               onClick={() => dispatch(openAuthorization())}
               className="nav__iconPerson"
