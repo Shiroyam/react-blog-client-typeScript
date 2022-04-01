@@ -73,7 +73,7 @@ export const Post: React.FC = () => {
             <form onSubmit={handleSubmit(onClickSubmit)}>
               <textarea {...register("comment", {
                 maxLength: {
-                  value: 200,
+                  value: 50,
                   message: "Можно ввести максимум 50 символа!",
                 },
               })} className="post__commentsInput"></textarea>

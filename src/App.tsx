@@ -6,6 +6,7 @@ import { Create } from "./pages/create/Create";
 import { Profile } from "./pages/profile/Profile";
 import { Authorization } from "./components/modal/authorization/Authorization";
 import { Registration } from "./components/modal/registration/Registration";
+import { EditingPage } from "./pages/editing/EditingPage";
 import { useTypesSelector } from "./hooks/useTypeSelector";
 import { Routes, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/editingPage/:id" element={<EditingPage />}></Route>
         <Route path="/post/:id" element={<Post />} />
       </Routes>
       {flagReg && <Registration />}

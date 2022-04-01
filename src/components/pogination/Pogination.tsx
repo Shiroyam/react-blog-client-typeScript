@@ -10,6 +10,7 @@ export const Pogination: React.FC = () => {
     const { flagMenu } = useTypesSelector((state) => state.menu)
     const { posts } = useTypesSelector((state) => state.posts)
     const page = Math.ceil(posts.total / 4)
+
     return (<>
         <div className="pogination">
             {flagMenu ?

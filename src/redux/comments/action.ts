@@ -13,6 +13,18 @@ export const getCommentsPost = (id: string | undefined) => async (dispatch: Disp
     }
 }
 
+export const getCommentsAll = () => async (dispatch: Dispatch<any>) => {
+    try {
+        const response = await axios.get(`http://localhost:5656/comments`)
+        dispatch({
+            type: "GET_COMMENTS_ALL",
+            payload: response.data.items
+        })
+    } catch (error) {
+        alert(error)
+    }
+}
+
 export const postComments = (data: any, id: string | undefined) => async (dispatch: Dispatch<any>) => {
     try {
         await axios.post("http://localhost:5656/comments", {

@@ -5,6 +5,10 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { createPost } from "../../redux/create/action";
 import { useDispatch } from "react-redux";
+import { getPost } from "../../redux/post/action";
+import { useParams } from "react-router-dom";
+import { useTypesSelector } from "../../hooks/useTypeSelector";
+
 
 export const Create: React.FC = () => {
   const dispatch = useDispatch()
