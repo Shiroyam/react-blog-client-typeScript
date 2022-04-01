@@ -8,13 +8,13 @@ interface PostsState {
 }
 
 const initState: PostsState = {
-  posts: {},
+  posts: {}
 };
 
 export const postsReducer = (
   state = initState,
   action: PostsAction
-): PostsState => {
+) => {
   switch (action.type) {
     case "GET_POSTS":
       return { posts: action.payload };

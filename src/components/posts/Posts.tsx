@@ -9,8 +9,8 @@ import { NavLink } from "react-router-dom";
 export const Posts: React.FC = () => {
   const dispatch = useDispatch();
   const { posts } = useTypesSelector((state) => state.posts);
-  const { text } = useTypesSelector((state) => state.search)
-  const postItems: any[] = posts.items
+  const { text } = useTypesSelector((state) => state.search);
+  const postItems: any[] = posts.items;
 
   React.useEffect(() => {
     dispatch(getPosts(text, 1));
@@ -29,7 +29,9 @@ export const Posts: React.FC = () => {
             <div className="posts__header">{post.title}</div>
             <div className="posts__text">{post.description}</div>
             <div className="posts__dateContainer">
-              <div className="posts__date">{post.createdAt}</div>
+              <div className="posts__date">
+                {post.createdAt.slice(0, 10)} в {post.createdAt.slice(11, 19)}
+              </div>
               <div className="posts__iconContainer">
                 <div className="posts__number">{post.views}</div>
                 <VisibilityIcon className="posts__icon" />

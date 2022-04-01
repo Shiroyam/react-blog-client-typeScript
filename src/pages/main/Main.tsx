@@ -2,7 +2,6 @@ import React from "react";
 import { Menu } from "../../components/menu/Menu";
 import { Navbar } from "../../components/navbar/Navbar";
 
-
 import "./main.scss";
 export const Main: React.FC = () => {
   return (
@@ -32,7 +31,6 @@ export const Main: React.FC = () => {
           </div>
         </div>
       </div>
-      
     </>
   );
 };

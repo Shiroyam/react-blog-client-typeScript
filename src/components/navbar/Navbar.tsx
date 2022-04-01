@@ -24,11 +24,20 @@ export const Navbar: React.FC = () => {
               onClick={() => dispatch(openSearch())}
               className="nav__iconSearch"
             />
-            <PersonIcon
-              onClick={() => dispatch(openAuthorization())}
-              className="nav__iconPerson"
-            />
-            <Link to="/create"><CreateIcon className="nav__iconCreate" /></Link>
+            {localStorage.getItem("token") ? (
+              <Link to="/profile">
+                <PersonIcon className="nav__iconPerson" />
+              </Link>
+            ) : (
+              <PersonIcon
+                onClick={() => dispatch(openAuthorization())}
+                className="nav__iconPerson"
+              />
+            )}
+
+            <Link to="/create">
+              <CreateIcon className="nav__iconCreate" />
+            </Link>
           </div>
         </div>
         <div>

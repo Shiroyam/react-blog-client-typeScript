@@ -18,8 +18,9 @@ export const Authorization: React.FC = () => {
   });
 
   const postAuth = (data: any) => {
-    dispatch(postAuthorization(data))
-  }
+    dispatch(postAuthorization(data));
+    dispatch(closeAuthorization());
+  };
 
   return (
     <>
@@ -35,35 +36,43 @@ export const Authorization: React.FC = () => {
           <form onSubmit={handleSubmit(postAuth)}>
             <div className="modal__inputEmail">
               <div className="modal__headerEmail">Email</div>
-              <input  {...register("email", {
-                required: "Поле обязательно!",
-                minLength: {
-                  value: 3,
-                  message: "Нужно ввести минимум 3 символа!",
-                },
-              })}
-                type="email" className="modal__input" />
+              <input
+                {...register("email", {
+                  required: "Поле обязательно!",
+                  minLength: {
+                    value: 3,
+                    message: "Нужно ввести минимум 3 символа!",
+                  },
+                })}
+                type="email"
+                className="modal__input"
+              />
               <div className="modal__context">
                 {errors?.email && <p>{errors?.email?.message || "Error!"}</p>}
               </div>
             </div>
             <div className="modal__inputPassword">
               <div className="modal__headerPassword">Пароль</div>
-              <input {...register("password", {
-                required: true,
-                minLength: {
-                  value: 8,
-                  message: "Пароль должен содержать 8 символов!",
-                },
-              })}
-                type="password" className="modal__input" />
+              <input
+                {...register("password", {
+                  required: true,
+                  minLength: {
+                    value: 8,
+                    message: "Пароль должен содержать 8 символов!",
+                  },
+                })}
+                type="password"
+                className="modal__input"
+              />
               <div className="modal__context">
                 {errors?.password && (
                   <p>{errors?.password?.message || "Поле обязательно!"}</p>
                 )}
               </div>
             </div>
-            <button type="submit" className="modal__button">Войти</button>
+            <button type="submit" className="modal__button">
+              Войти
+            </button>
           </form>
         </div>
       </div>

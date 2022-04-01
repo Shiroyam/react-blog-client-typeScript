@@ -18,7 +18,7 @@ export const authorizationReducer = (state = initState, action: AuthAction) => {
     case "CLOSE_AUTH":
       return { ...state, flagAuth: false };
     case "POST_AUTH":
-      return state
+      return state;
     default:
       return state;
   }

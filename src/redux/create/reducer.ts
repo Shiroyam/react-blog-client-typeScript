@@ -1,21 +1,24 @@
 interface CreateAction {
-    type: string;
-    payload?: any[];
+  type: string;
+  payload?: any[];
 }
 
 interface CreateState {
-    create: any[];
+  create: any[];
 }
 
 const initialState = {
-    create: [],
-}
+  create: [],
+};
 
-export const createReducer = (state = initialState, action: CreateAction): CreateState => {
-    switch (action.type) {
-        case "POST_CREATE":
-            return state;
-        default:
-            return state;
-    }
-}
+export const createReducer = (
+  state = initialState,
+  action: CreateAction
+): CreateState => {
+  switch (action.type) {
+    case "POST_CREATE":
+      return state;
+    default:
+      return state;
+  }
+};

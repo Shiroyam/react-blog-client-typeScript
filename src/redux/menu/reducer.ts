@@ -1,5 +1,5 @@
 interface MenuState {
-  flagMenu:boolean;
+  flagMenu: boolean;
 }
 
 interface MenuAction {
